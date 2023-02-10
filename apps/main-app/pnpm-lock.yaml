@@ -1,0 +1,20 @@
+lockfileVersion: 5.4
+
+importers:
+
+  .:
+    specifiers:
+      components: workspace:*
+      tools: workspace:*
+    dependencies:
+      components: link:../../packages/components
+      tools: link:../../packages/tools
+
+  ../..:
+    specifiers: {}
+
+  ../../packages/components:
+    specifiers: {}
+
+  ../../packages/tools:
+    specifiers: {}

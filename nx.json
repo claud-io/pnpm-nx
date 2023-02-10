@@ -1,0 +1,29 @@
+{
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "test"]
+      }
+    }
+  },
+  "namedInputs": {
+    "noMarkdown": ["!{projectRoot}/**/*.md"]
+  },
+  "targetDefaults": {
+    "build": {
+      "inputs": ["noMarkdown", "^noMarkdown"],
+      "outputs": ["{projectRoot}/dist"],
+      "dependsOn": ["^build", "pre-build"]
+    },
+    "dev": {
+      "options": {
+        "hmr": true
+      },
+      "dependsOn": ["^build"]
+    },
+    "test": {
+      "inputs": ["noMarkdown"]
+    }
+  }
+}
